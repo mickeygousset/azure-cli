@@ -8,7 +8,7 @@ python -m pip install -qqq flake8
 
 echo "Run flake8."
 echo "$pwd"
-echo "$(./.flake8)"
+echo "$(<./.flake8)"
 flake8 --statistics --config=./.flake8
 #flake8 --statistics --config=./.flake8 
 
