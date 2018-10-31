@@ -38,5 +38,5 @@ jobs:
     displayName: 'tox'
 
   #Precheck Stages
-  - script: './scripts/ci/precheck_pep8.sh'
+  - script: 'sudo ./scripts/ci/precheck_pep8.sh'
     displayName: "precheck pep8"
