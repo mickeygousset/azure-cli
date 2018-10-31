@@ -10,6 +10,7 @@ jobs:
         python.version: '3.6'
         python.architecture: 'x64'
 
+  steps:
   # Install the dependencies
   - bash: |
     apt-get install libssl-dev
