@@ -13,6 +13,7 @@ jobs:
   steps:
   # Install the dependencies
   - task: Bash@3
-    displayname: 'Install libssl-dev dependency'
-    targetType: 'inline'
-    script: 'apt-get install libssl-dev'
+    inputs:
+      displayname: 'Install libssl-dev dependency'
+      targetType: 'inline'
+      script: 'apt-get install libssl-dev'
