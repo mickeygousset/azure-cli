@@ -16,4 +16,4 @@ jobs:
     inputs:
       displayname: 'Install libssl-dev dependency'
       targetType: 'inline'
-      script: 'apt-get install libssl-dev'
+      script: 'sudo apt-get install libssl-dev'
