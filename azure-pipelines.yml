@@ -11,7 +11,8 @@ jobs:
         python.architecture: 'x64'
 
   steps:
-   Install the dependencies
+  
+  # Install the dependencies
   - task: Bash@3
     inputs:
       displayname: 'Install libssl-dev dependency'
