@@ -29,6 +29,10 @@ jobs:
       targetType: 'inline'
       script: 'sudo apt-get install python-dev'
 
+  #Install tools
+  - script: 'python -m pip install --upgrade pip setuptools'
+    displayName: 'Install tools'      
+
   #Install tox
-  - script: pip install tox
-    displayName: 'Run pip install tox'      
+  - script: 'pip install tox'
+    displayName: 'installing pip install tox'
