@@ -15,17 +15,20 @@ jobs:
   # Install the dependencies
   - task: Bash@3
     inputs:
-      displayname: 'Install libssl-dev dependency'
+      displayName: 'Install libssl-dev dependency'
       targetType: 'inline'
       script: 'sudo apt-get install libssl-dev'
   - task: Bash@3
     inputs:
-      displayname: 'Install libffi-dev dependency'
+      displayName: 'Install libffi-dev dependency'
       targetType: 'inline'
       script: 'sudo apt-get install libffi-dev'
   - task: Bash@3
     inputs:
-      displayname: 'Install python-dev dependency'
+      displayName: 'Install python-dev dependency'
       targetType: 'inline'
       script: 'sudo apt-get install python-dev'
-      
+
+  #Install tox
+  - script: pip install tox
+    displayName: 'Run pip install tox'      
