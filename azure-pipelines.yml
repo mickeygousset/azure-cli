@@ -13,5 +13,7 @@ jobs:
   steps:
   # Install the dependencies
   - bash: |
-    apt-get install libssl-dev
+    'apt-get install libssl-dev'
 
+  - task: PublishArtifacts
+    displayname: 'I don't do anything yet'
