@@ -11,14 +11,10 @@ jobs:
         python.architecture: 'x64'
 
   steps:
-  # Install the dependencies
-  #- task: Bash@3
-  #  inputs:
-  #    displayname: 'Install libssl-dev dependency'
-  #    targetType: 'inline'
-  #    script: 'sudo apt-get install libssl-dev'
-
-  - bash: |
-      'sudo apt-get install libssl-dev'
+   Install the dependencies
+  - task: Bash@3
+    inputs:
       displayname: 'Install libssl-dev dependency'
+      targetType: 'inline'
+      script: 'sudo apt-get install libssl-dev'
       
