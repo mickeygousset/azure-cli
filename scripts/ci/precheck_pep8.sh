@@ -7,7 +7,7 @@ set -e
 python -m pip install -qqq flake8
 
 echo "Run flake8."
-cat "./.flake8"
+echo "$(./.flake8)"
 flake8 --statistics --config=./.flake8
 #flake8 --statistics --config=./.flake8 
 
