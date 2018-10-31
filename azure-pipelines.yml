@@ -29,10 +29,15 @@ jobs:
       targetType: 'inline'
       script: 'sudo apt-get install python-dev'
 
-  #Install tools
+  #Upgrade pip
   - script: 'python -m pip install --upgrade pip setuptools'
     displayName: 'Install tools'      
 
-  #Upgrading pip
+  #Install tox
   - script: 'sudo python -m pip install tox'
     displayName: 'tox'
+
+  #Precheck Stages
+   - bash: '$(System.DefaultWorkingDirectory)/scripts/ci/precheck_pep8.sh'
+     displayName: 'PURPOSE=PEP8'
+     
