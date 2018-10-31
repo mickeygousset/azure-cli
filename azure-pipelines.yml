@@ -33,6 +33,6 @@ jobs:
   - script: 'python -m pip install --upgrade pip setuptools'
     displayName: 'Install tools'      
 
-  #Install tox
-  - script: 'pip install tox'
-    displayName: 'installing pip install tox'
+  #Upgrading pip
+  - script: 'pip install --upgrade pip'
+    displayName: 'upgrading pip'
