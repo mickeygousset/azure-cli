@@ -34,5 +34,5 @@ jobs:
     displayName: 'Install tools'      
 
   #Upgrading pip
-  - script: 'python -m pip install tox'
+  - script: 'sudo python -m pip install tox'
     displayName: 'tox'
