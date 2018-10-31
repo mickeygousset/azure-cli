@@ -34,5 +34,5 @@ jobs:
     displayName: 'Install tools'      
 
   #Upgrading pip
-  - script: 'pip install --upgrade pip'
+  - script: 'sudo pip install --upgrade pip'
     displayName: 'upgrading pip'
