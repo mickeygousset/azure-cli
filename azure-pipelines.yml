@@ -42,4 +42,4 @@ jobs:
     inputs:
       displayName: 'PURPOSE=PEP8'
       targetType: 'filePath'
-      script: '$(System.DefaultWorkingDirectory)/scripts/ci/precheck_pep8.sh'
+      script: './scripts/ci/precheck_pep8.sh'
