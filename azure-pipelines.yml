@@ -38,6 +38,8 @@ jobs:
     displayName: 'tox'
 
   #Precheck Stages
-   - bash: '$(System.DefaultWorkingDirectory)/scripts/ci/precheck_pep8.sh'
-     displayName: 'PURPOSE=PEP8'
-     
+  - task: Bash@3
+    inputs:
+      displayName: 'PURPOSE=PEP8'
+      targetType: 'filePath'
+      script: '$(System.DefaultWorkingDirectory)/scripts/ci/precheck_pep8.sh'
