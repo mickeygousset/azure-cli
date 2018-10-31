@@ -17,5 +17,11 @@ jobs:
     inputs:
       displayname: 'Install libssl-dev dependency'
       targetType: 'inline'
-      script: 'sudo apt-get install libssl-dev; sudo apt-get install libffi-dev; sudo apt-get install python-dev'
+      script: 'sudo apt-get install libssl-dev'
+
+  - task: Bash@3
+    inputs:
+      displayname: 'Install libffi-dev dependency'
+      targetType: 'inline'
+      script: 'sudo apt-get install libffi-dev'
       
