@@ -1,0 +1,15 @@
+#You can have multiple jobs in a build.
+jobs:
+- job: PythonBuildOnLinux
+  pool:
+    vmImage: 'ubuntu-16.04'
+  strategy:
+    maxParallel: 2
+    matrix:
+      Python36:
+        python.version: '3.6'
+        python.architecture: 'x64'
+
+  bash: |
+    apt-get install libssl-dev
+
