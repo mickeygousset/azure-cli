@@ -38,6 +38,6 @@ jobs:
     displayName: 'tox'
 
   #Precheck Stages - 
-  - bash: 'sudo $(System.DefaultWorkingDirectory)/scripts/ci/precheck_pep8.sh'
+  - script: '$(System.DefaultWorkingDirectory)/scripts/ci/precheck_pep8.sh'
     displayName: "precheck pep8"
     workingDirectory: '$(System.DefaultWorkingDirectory)/scripts'
