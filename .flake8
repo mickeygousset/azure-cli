@@ -8,6 +8,9 @@ ignore =
     F811,  # redefinition of unused, to be removed in the future
     C901   # code flow is too complex, too many violations, to be removed in the future
     W504   # line break after binary operator effect on readability is subjective
+    E999
+    F812
+    F821
 exclude = 
     azure_bdist_wheel.py
     build
