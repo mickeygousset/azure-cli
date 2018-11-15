@@ -8,10 +8,14 @@ jobs:
     matrix:
       Python36:
         python.version: '3.6'
-        python.architecture: 'x64'
 
   steps:
-  
+  #Python Version To Use
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(python.version)'
+      architecture: 'x64'
+    
   # Install the dependencies
   - task: Bash@3
     inputs:
@@ -43,7 +47,6 @@ jobs:
 
 
   #Precheck Stages - 
-  #- script: 'sudo $(System.DefaultWorkingDirectory)/scripts/ci/precheck_pep8.sh'
-  - script: '$(System.DefaultWorkingDirectory)/scripts/ci/precheck_pep8.sh'
+  - script: 'sudo $(System.DefaultWorkingDirectory)/scripts/ci/precheck_pep8.sh'
     displayName: "precheck pep8"
     workingDirectory: '$(System.DefaultWorkingDirectory)'
