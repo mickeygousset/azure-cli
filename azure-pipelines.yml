@@ -13,7 +13,7 @@ jobs:
   #Python Version To Use
   - task: UsePythonVersion@0
     inputs:
-      versionSpec: '$(python.version)'
+      versionSpec: '3.6'
       architecture: 'x64'
     
   # Install the dependencies
