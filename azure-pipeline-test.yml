@@ -1,0 +1,12 @@
+pool:
+  vmImage: 'ubuntu-16.04'
+
+steps:
+
+# Create a variable
+- script: |
+    echo '##vso[task.setvariable variable=myVariable]abc123'
+
+# Print the variable
+- script: |
+    echo my variable is $(myVariable)
