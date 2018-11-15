@@ -37,6 +37,11 @@ jobs:
   - script: 'sudo python -m pip install tox'
     displayName: 'tox'
 
+  #Install wheel
+  - script: 'sudo python -m pip install wheel'
+    displayName: 'wheel'
+
+
   #Precheck Stages - 
   - script: 'sudo $(System.DefaultWorkingDirectory)/scripts/ci/precheck_pep8.sh'
     displayName: "precheck pep8"
