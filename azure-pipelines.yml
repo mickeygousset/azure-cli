@@ -16,11 +16,11 @@ jobs:
     inputs:
       versionSpec: '$(python.version)'
       architecture: 'x64'
-      displayName: 'Set Python version to use to $(python.version)'
+    displayName: 'Set Python version to use to $(python.version)'
 
   # Install the package dependencies
   - task: Bash@3
     inputs:
-      displayName: 'Install libssl-dev, libffi-dev, and python-dev dependencies'
       targetType: 'inline'
-      script: 'sudo apt-get install libssl-dev libffi-dev python-dev' 
+      script: 'sudo apt-get install libssl-dev libffi-dev python-dev'
+    displayName: 'Install libssl-dev, libffi-dev, and python-dev dependencies'
