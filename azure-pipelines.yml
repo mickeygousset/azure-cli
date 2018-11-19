@@ -24,3 +24,11 @@ jobs:
       targetType: 'inline'
       script: 'sudo apt-get install libssl-dev libffi-dev python-dev'
     displayName: 'Install libssl-dev, libffi-dev, and python-dev dependencies'
+
+  #Upgrade pip
+  - script: 'python -m pip install --upgrade pip setuptools'
+    displayName: 'Upgrade pip setup tools'
+
+  #Install tox
+  - script: 'pip install tox'
+    displayName: 'Install tox'
