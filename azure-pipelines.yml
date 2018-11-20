@@ -11,17 +11,16 @@ jobs:
         python.version: '3.6'
 
   variables:
-    TRAVIS_EVENT_TYPE: $(Build.Reason)
-    #TRAVIS_REPO_SLUG: $(Build.Repository.Name)
-    TRAVIS_REPO_SLUG: $(setvarStep.myOutputVar)
+    TRAVIS_EVENT_TYPE: $(setvarStep.TRAVIS_EVENT_TYPE)
+    TRAVIS_REPO_SLUG: $(setvarStep.TRAVIS_REPO_SLUG)
 
   steps:
-  - script: echo "##vso[task.setvariable variable=myOutputVar;isOutput=true]$(Build.Repository.Name)"
+  #Create environment variables to replicate the Travis variables, so we don't have to change scripts
+  - script: |
+      echo "##vso[task.setvariable variable=TRAVIS_EVENT_TYPE;isOutput=true]$(Build.Reason)"
+      echo "##vso[task.setvariable variable=TRAVIS_REPO_SLUG;isOutput=true]$(Build.Repository.Name)"
     name: setvarStep
-    displayName: 'setvarStep'
-  - script: echo $(setvarStep.myOutputVar)
-    name: echovar
-    displayName: 'echovar'
+    displayName: 'Replicate Travis Environment Variables'
     
   #Specify the Python Version to use.
   - task: UsePythonVersion@0
