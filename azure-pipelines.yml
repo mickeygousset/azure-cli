@@ -52,9 +52,9 @@ jobs:
 
   #Precheck Stages
   # Commenting out to test things 
-  - script: './scripts/ci/precheck_pep8.sh'
-    displayName: "Precheck PURPOSE='PEP8"
-    workingDirectory: './'
+  #- script: './scripts/ci/precheck_pep8.sh'
+  #  displayName: "Precheck PURPOSE='PEP8"
+  #  workingDirectory: './'
   - script: './scripts/ci/precheck_header.sh'
     displayName: "Precheck PURPOSE='Headers"
     workingDirectory: './'
