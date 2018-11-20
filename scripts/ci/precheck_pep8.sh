@@ -8,8 +8,8 @@ python -m pip install -qqq flake8
 
 echo "Run flake8."
 echo "env variables"
-echo '$BUILD_REASON'
-echo '$$BUILD_REPOSITORY_NAME'
+echo $BUILD_REASON
+echo "$BUILD_REPOSITORY_NAME"
 
 flake8 --statistics --config=./.flake8
 #flake8 --statistics --config=./.flake8 
