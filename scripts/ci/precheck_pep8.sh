@@ -7,7 +7,10 @@ set -e
 python -m pip install -qqq flake8
 
 echo "Run flake8."
-echo "$(ls -al ./)"
+echo "env variables"
+echo '$Build.Reason'
+echo '$Build.Repository.Name'
+
 flake8 --statistics --config=./.flake8
 #flake8 --statistics --config=./.flake8 
 

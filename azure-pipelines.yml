@@ -39,5 +39,8 @@ jobs:
 
   #Precheck Stages - 
   - script: './scripts/ci/precheck_pep8.sh'
-    displayName: "precheck pep8"
+    displayName: "Precheck PURPOSE='PEP8"
     workingDirectory: './'
+#  - script: './scripts/ci/precheck_header.sh'
+#    displayName: "Precheck PURPOSE='Headers"
+#    workingDirectory: './'
