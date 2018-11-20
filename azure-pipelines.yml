@@ -58,3 +58,10 @@ jobs:
   - script: './scripts/dependency/check.sh'
     displayName: "Precheck PURPOSE='Dependency Check"
     workingDirectory: './'
+
+  #UnitTest Stage
+  #May need to create another env variable here. TOXENV
+  - script: './scripts/ci/unittest.sh'
+    displayName: "UnitTest TOXENV=py36"
+    workingDirectory: './'
+
