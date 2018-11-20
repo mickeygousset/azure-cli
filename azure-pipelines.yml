@@ -62,9 +62,13 @@ jobs:
     workingDirectory: './'
 
   #UnitTest Stage
-  #May need to create another env variable here. TOXENV
+  #Had to create the TOXENV variable. So we will have to figure out how to
+  #parallelize that. For now we move forward with 3.6
   - script: './scripts/ci/unittest.sh'
     displayName: "UnitTest TOXENV=py36"
     workingDirectory: './'
-    
 
+  #Verify Stage
+  - script: './scripts/ci/verify_linter.sh'
+    displayName: "Verify PURPOSE='Lint Command Table and Help'"
+    workingDirectory: './'
