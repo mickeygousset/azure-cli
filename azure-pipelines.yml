@@ -15,6 +15,10 @@ jobs:
     TRAVIS_REPO_SLUG: $(Build.Repository.Name)
 
   steps:
+  - script: '##vso[task.setvariable variable=MICKEYTEST;isOutput=true]PleaseWork'
+    displayName: 'Testing creating a variable'
+  - script: 'echo $MICKEYTEST'
+    displayName: 'Trying to echo variable out'
   #Specify the Python Version to use.
   - task: UsePythonVersion@0
     inputs:
