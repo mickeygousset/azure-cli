@@ -13,12 +13,14 @@ jobs:
   variables:
     TRAVIS_EVENT_TYPE: $(setvarStep.TRAVIS_EVENT_TYPE)
     TRAVIS_REPO_SLUG: $(setvarStep.TRAVIS_REPO_SLUG)
+    TOXENV: $(setvarStep.TOXENV)
 
   steps:
   #Create environment variables to replicate the Travis variables, so we don't have to change scripts
   - script: |
       echo "##vso[task.setvariable variable=TRAVIS_EVENT_TYPE;isOutput=true]$(Build.Reason)"
       echo "##vso[task.setvariable variable=TRAVIS_REPO_SLUG;isOutput=true]$(Build.Repository.Name)"
+      echo "##vso[task.setvariable variable=TOXENV;isOutput=true]py36"
     name: setvarStep
     displayName: 'Replicate Travis Environment Variables'
     
@@ -64,4 +66,5 @@ jobs:
   - script: './scripts/ci/unittest.sh'
     displayName: "UnitTest TOXENV=py36"
     workingDirectory: './'
+    
 
