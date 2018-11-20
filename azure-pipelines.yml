@@ -55,3 +55,6 @@ jobs:
   - script: './scripts/ci/precheck_header.sh'
     displayName: "Precheck PURPOSE='Headers"
     workingDirectory: './'
+  - script: './scripts/dependency/check.sh'
+    displayName: "Precheck PURPOSE='Dependency Check"
+    workingDirectory: './'
