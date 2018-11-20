@@ -32,3 +32,12 @@ jobs:
   #Install tox
   - script: 'pip install tox'
     displayName: 'Install tox'
+
+  #Install wheel
+  - script: 'pip install wheel'
+    displayName: 'pip install wheel'
+
+  #Precheck Stages - 
+  - script: './scripts/ci/precheck_pep8.sh'
+    displayName: "precheck pep8"
+    workingDirectory: './'
