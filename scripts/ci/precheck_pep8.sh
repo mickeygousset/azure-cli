@@ -10,7 +10,6 @@ echo "Run flake8."
 echo "env variables"
 echo $TRAVIS_EVENT_TYPE
 echo "$TRAVIS_REPO_SLUG"
-echo $MY_MICKEY_TEST
 
 flake8 --statistics --config=./.flake8
 #flake8 --statistics --config=./.flake8 
