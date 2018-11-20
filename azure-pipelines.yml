@@ -12,7 +12,7 @@ jobs:
 
   variables:
     TRAVIS_EVENT_TYPE: $(Build.Reason)
-    TRAVIS_REPO_SLUG: $(Build.Respository.Name)
+    TRAVIS_REPO_SLUG: $(Build.Repository.Name)
 
   steps:
   #Specify the Python Version to use.
