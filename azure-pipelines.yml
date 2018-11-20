@@ -17,8 +17,15 @@ jobs:
   steps:
   - script: '##vso[task.setvariable variable=MICKEYTEST;isOutput=true]PleaseWork'
     displayName: 'Testing creating a variable'
-  - script: 'echo $MICKEYTEST'
-    displayName: 'Trying to echo variable out'
+  - script: 'echo does this work: $env:MY_MICKEY_TEST'
+    displayName: 'Trying to echo variable out using env var'
+    env:
+      MY_MICKEY_TEST: $(MICKEYTEST)
+  - script: 'echo does this also work: $(MICKEYTEST)'
+    displayName: 'Trying to echo variable out using env var'
+    env:
+      MY_MICKEY_TEST: $(MICKEYTEST)
+    
   #Specify the Python Version to use.
   - task: UsePythonVersion@0
     inputs:
