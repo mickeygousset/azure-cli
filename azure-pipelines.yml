@@ -10,6 +10,10 @@ jobs:
       Python36:
         python.version: '3.6'
 
+  variables:
+    TRAVIS_EVENT_TYPE: $(Build.Reason)
+    TRAVIS_REPO_SLUG: $(Build.Respository.Name)
+
   steps:
   #Specify the Python Version to use.
   - task: UsePythonVersion@0
