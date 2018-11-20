@@ -52,23 +52,23 @@ jobs:
 
   #Precheck Stages
   # Commenting out to test things 
-  #- script: './scripts/ci/precheck_pep8.sh'
-  #  displayName: "Precheck PURPOSE='PEP8"
-  #  workingDirectory: './'
-  #- script: './scripts/ci/precheck_header.sh'
-  #  displayName: "Precheck PURPOSE='Headers"
-  #  workingDirectory: './'
-  #- script: './scripts/dependency/check.sh'
-  #  displayName: "Precheck PURPOSE='Dependency Check"
-  #  workingDirectory: './'
+  - script: './scripts/ci/precheck_pep8.sh'
+    displayName: "Precheck PURPOSE='PEP8"
+    workingDirectory: './'
+  - script: './scripts/ci/precheck_header.sh'
+    displayName: "Precheck PURPOSE='Headers"
+    workingDirectory: './'
+  - script: './scripts/dependency/check.sh'
+    displayName: "Precheck PURPOSE='Dependency Check"
+    workingDirectory: './'
 
   #UnitTest Stage
   #Had to create the TOXENV variable. So we will have to figure out how to
   #parallelize that. For now we move forward with 3.6
   # Commenting out to test things
-  - script: './scripts/ci/unittest.sh'
-    displayName: "UnitTest TOXENV=py36"
-    workingDirectory: './'
+  #- script: './scripts/ci/unittest.sh'
+  #  displayName: "UnitTest TOXENV=py36"
+  #  workingDirectory: './'
 
   #Verify Stage
   #This stage is also going to need environment variables
