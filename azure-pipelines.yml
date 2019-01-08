@@ -82,6 +82,6 @@ jobs:
 
   #Verify Stage
   #This stage is also going to need environment variables
-  #- script: './scripts/ci/verify_linter.sh'
-  #  displayName: "Verify PURPOSE='Lint Command Table and Help'"
-  #  workingDirectory: './'
+  - script: './scripts/ci/verify_linter.sh'
+    displayName: "Verify PURPOSE='Lint Command Table and Help'"
+    workingDirectory: './'
