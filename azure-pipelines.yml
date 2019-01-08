@@ -24,6 +24,10 @@ jobs:
     name: setvarStep
     displayName: 'Replicate Travis Environment Variables'
     
+  #Do a pip install to replicate what Travis does when you specify python as language
+  - script: pip install -r requirements.txt
+    displayName: 'pip install -r requirements.txt'
+
   #Specify the Python Version to use.
   - task: UsePythonVersion@0
     inputs:
@@ -55,23 +59,22 @@ jobs:
   - script: './scripts/ci/precheck_pep8.sh'
     displayName: "Precheck PURPOSE='PEP8"
     workingDirectory: './'
-  - script: './scripts/ci/precheck_header.sh'
-    displayName: "Precheck PURPOSE='Headers"
-    workingDirectory: './'
-  - script: './scripts/dependency/check.sh'
-    displayName: "Precheck PURPOSE='Dependency Check"
-    workingDirectory: './'
+  #- script: './scripts/ci/precheck_header.sh'
+  #  displayName: "Precheck PURPOSE='Headers"
+  #  workingDirectory: './'
+  #- script: './scripts/dependency/check.sh'
+  #  displayName: "Precheck PURPOSE='Dependency Check"
+  #  workingDirectory: './'
 
   #UnitTest Stage
   #Had to create the TOXENV variable. So we will have to figure out how to
   #parallelize that. For now we move forward with 3.6
-  # Commenting out to test things
   #- script: './scripts/ci/unittest.sh'
   #  displayName: "UnitTest TOXENV=py36"
   #  workingDirectory: './'
 
   #Verify Stage
   #This stage is also going to need environment variables
-  - script: './scripts/ci/verify_linter.sh'
-    displayName: "Verify PURPOSE='Lint Command Table and Help'"
-    workingDirectory: './'
+  #- script: './scripts/ci/verify_linter.sh'
+  #  displayName: "Verify PURPOSE='Lint Command Table and Help'"
+  #  workingDirectory: './'
