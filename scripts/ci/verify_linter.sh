@@ -3,8 +3,11 @@
 set -e
 
 echo 'mickey: start of verify linter'
+echo 'mickey: rocks'
 
 . $(cd $(dirname $0); pwd)/artifacts.sh
+
+echo 'mickey: rocks2'
 
 echo 'mickey: share folder:'
 echo $share_folder
