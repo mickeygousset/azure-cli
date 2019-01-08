@@ -69,9 +69,9 @@ jobs:
   - script: './scripts/ci/precheck_header.sh'
     displayName: "Precheck PURPOSE='Headers"
     workingDirectory: './'
-  #- script: './scripts/dependency/check.sh'
-  #  displayName: "Precheck PURPOSE='Dependency Check"
-  #  workingDirectory: './'
+  - script: './scripts/dependency/check.sh'
+    displayName: "Precheck PURPOSE='Dependency Check"
+    workingDirectory: './'
 
   #UnitTest Stage
   #Had to create the TOXENV variable. So we will have to figure out how to
