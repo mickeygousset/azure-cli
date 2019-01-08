@@ -28,6 +28,14 @@ jobs:
   - script: pip install -r requirements.txt
     displayName: 'pip install -r requirements.txt'
 
+  - powershell: |
+      # fix the Build.Reason to be what the scripts suggest.
+      if ($(Build.Reason) -eq 'IndividualCI') {
+          Write-Output ("Woo Hoo")
+          Write-Output ("##vso[task.setvariable variable=TRAVIS_EVENT_TYPE;isOutput=true]Individual_CI"
+      }
+    displayName: 'Testing Powershell'
+
   #Specify the Python Version to use.
   - task: UsePythonVersion@0
     inputs:
