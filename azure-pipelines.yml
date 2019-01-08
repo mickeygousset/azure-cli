@@ -30,7 +30,7 @@ jobs:
 
   - powershell: |
       # fix the Build.Reason to be what the scripts suggest.
-      if ($(Build.Reason) -eq 'IndividualCI') {
+      if ("$(Build.Reason)" -eq "IndividualCI") {
           Write-Output ("Woo Hoo")
           Write-Output ("##vso[task.setvariable variable=TRAVIS_EVENT_TYPE;isOutput=true]Individual_CI")
           Write-Output ("Hoo Woo")
