@@ -5,9 +5,14 @@
 
 set -e
 
+echo "build 01"
+
 ##############################################
 # clean up and dir search
 mkdir -p ./artifacts
+
+echo "build 02"
+
 echo `git rev-parse --verify HEAD` > ./artifacts/build.sha
 
 mkdir -p ./artifacts/build
@@ -48,6 +53,8 @@ echo -n $version > ./artifacts/version
 # build product packages
 title 'Build Azure CLI and its command modules'
 for setup_file in $(find src -name 'setup.py'); do
+    echo "MICKEY: $(setup_file)"
+    echo $setup_file
     pushd $(dirname $setup_file) >/dev/null
     echo "Building module at $(pwd) ..."
     python setup.py -q bdist_wheel -d $output_dir
