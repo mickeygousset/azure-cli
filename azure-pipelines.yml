@@ -33,6 +33,7 @@ jobs:
       if ($(Build.Reason) -eq 'IndividualCI') {
           Write-Output ("Woo Hoo")
           Write-Output ("##vso[task.setvariable variable=TRAVIS_EVENT_TYPE;isOutput=true]Individual_CI")
+          Write-Output ("Hoo Woo")
       }
     displayName: 'Testing Powershell'
 
