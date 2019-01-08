@@ -18,10 +18,9 @@ jobs:
   steps:
   #Create environment variables to replicate the Travis variables, so we don't have to change scripts
   - powershell: |
-      if ("$(Build.Reason)" -eq "IndividualCI") {
-          Write-Output ("Woo Hoo")
-          echo "##vso[task.setvariable variable=TRAVIS_EVENT_TYPE;isOutput=true]Individual_CI"
-          Write-Output ("Hoo Woo")
+      if ("$(Build.Reason)" -eq "PullRequest") 
+      {
+          echo "##vso[task.setvariable variable=TRAVIS_EVENT_TYPE;isOutput=true]pull_request"
       }
       else
       {
@@ -35,15 +34,6 @@ jobs:
   #Do a pip install to replicate what Travis does when you specify python as language
   - script: pip install -r requirements.txt
     displayName: 'pip install -r requirements.txt'
-
-  - powershell: |
-      # fix the Build.Reason to be what the scripts suggest.
-      if ("$(TRAVIS_EVENT_TYPE)" -eq "IndividualCI") {
-          Write-Output ("Woo Hoo")
-          echo put ("##vso[task.setvariable variable=TRAVIS_EVENT_TYPE;isOutput=true]Individual_CI")
-          Write-Output ("Hoo Woo")
-      }
-    displayName: 'Testing Powershell'
 
   #Specify the Python Version to use.
   - task: UsePythonVersion@0
@@ -76,9 +66,9 @@ jobs:
   - script: './scripts/ci/precheck_pep8.sh'
     displayName: "Precheck PURPOSE='PEP8"
     workingDirectory: './'
-  #- script: './scripts/ci/precheck_header.sh'
-  #  displayName: "Precheck PURPOSE='Headers"
-  #  workingDirectory: './'
+  - script: './scripts/ci/precheck_header.sh'
+    displayName: "Precheck PURPOSE='Headers"
+    workingDirectory: './'
   #- script: './scripts/dependency/check.sh'
   #  displayName: "Precheck PURPOSE='Dependency Check"
   #  workingDirectory: './'
