@@ -53,7 +53,7 @@ echo -n $version > ./artifacts/version
 # build product packages
 title 'Build Azure CLI and its command modules'
 for setup_file in $(find src -name 'setup.py'); do
-    echo "MICKEY: $(setup_file)"
+    echo "MICKEY:"
     echo $setup_file
     pushd $(dirname $setup_file) >/dev/null
     echo "Building module at $(pwd) ..."
