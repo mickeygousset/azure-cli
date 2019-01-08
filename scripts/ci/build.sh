@@ -52,6 +52,7 @@ echo -n $version > ./artifacts/version
 ##############################################
 # build product packages
 title 'Build Azure CLI and its command modules'
+echo $(find src -name 'setup.py')
 for setup_file in $(find src -name 'setup.py'); do
     echo "MICKEY:"
     echo $setup_file
