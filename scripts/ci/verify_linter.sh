@@ -6,6 +6,7 @@ echo 'mickey: start of verify linter'
 echo 'mickey: rocks'
 
 #. $(cd $(dirname $0); pwd)/artifacts.sh
+. $(cd $(dirname $0); pwd)/artifacts.sh
 
 echo 'mickey: rocks2'
 
