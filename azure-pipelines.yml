@@ -17,8 +17,16 @@ jobs:
 
   steps:
   #Create environment variables to replicate the Travis variables, so we don't have to change scripts
-  - script: |
-      echo "##vso[task.setvariable variable=TRAVIS_EVENT_TYPE;isOutput=true]$(Build.Reason)"
+  - powershell: |
+      if ("$(Build.Reason)" -eq "IndividualCI") {
+          Write-Output ("Woo Hoo")
+          echo "##vso[task.setvariable variable=TRAVIS_EVENT_TYPE;isOutput=true]Individual_CI"
+          Write-Output ("Hoo Woo")
+      }
+      else
+      {
+          echo "##vso[task.setvariable variable=TRAVIS_EVENT_TYPE;isOutput=true]$(Build.Reason)"
+      }
       echo "##vso[task.setvariable variable=TRAVIS_REPO_SLUG;isOutput=true]$(Build.Repository.Name)"
       echo "##vso[task.setvariable variable=TOXENV;isOutput=true]py36"
     name: setvarStep
@@ -30,9 +38,9 @@ jobs:
 
   - powershell: |
       # fix the Build.Reason to be what the scripts suggest.
-      if ("$(Build.Reason)" -eq "IndividualCI") {
+      if ("$(TRAVIS_EVENT_TYPE)" -eq "IndividualCI") {
           Write-Output ("Woo Hoo")
-          Write-Output ("##vso[task.setvariable variable=TRAVIS_EVENT_TYPE;isOutput=true]Individual_CI")
+          echo put ("##vso[task.setvariable variable=TRAVIS_EVENT_TYPE;isOutput=true]Individual_CI")
           Write-Output ("Hoo Woo")
       }
     displayName: 'Testing Powershell'
