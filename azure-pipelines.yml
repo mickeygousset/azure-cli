@@ -66,6 +66,8 @@ jobs:
   - script: './scripts/ci/precheck_pep8.sh'
     displayName: "Precheck PURPOSE='PEP8"
     workingDirectory: './'
+    env:
+      PURPOSE: "PEP8"
   - script: './scripts/ci/precheck_header.sh'
     displayName: "Precheck PURPOSE='Headers"
     workingDirectory: './'
