@@ -74,6 +74,8 @@ jobs:
     workingDirectory: './'
 
   #UnitTest Stage
+  #COMMENTTED OUT INTENTIONALLY RIGHT NOW BECAUSE IT BREAKS LINT STEP
+  #NEED TO FIX THIS
   #Had to create the TOXENV variable. So we will have to figure out how to
   #parallelize that. For now we move forward with 3.6
   #- script: './scripts/ci/unittest.sh'
@@ -84,4 +86,4 @@ jobs:
   #This stage is also going to need environment variables
   - script: './scripts/ci/verify_linter.sh'
     displayName: "Verify PURPOSE='Lint Command Table and Help'"
-    workingDirectory: './'
+    workingDirectory: './'    

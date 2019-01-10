@@ -10,17 +10,17 @@ echo 'mickey: rocks'
 
 echo 'mickey: rocks2'
 
-#echo 'mickey: share folder:'
-#echo $share_folder
+echo 'mickey: share folder:'
+echo $share_folder
 
-#ls -la $share_folder/build
+ls -la $share_folder/build
 
-#echo 'Mickey: All Modules'
+echo 'Mickey: All Modules'
 
-#ALL_MODULES=`find $share_folder/build/ -name "*.whl"`
+ALL_MODULES=`find $share_folder/build/ -name "*.whl"`
 
-#pip install -e ./tools
-#[ -d privates ] && pip install -qqq privates/*.whl
-#pip install $ALL_MODULES
+pip install -e ./tools
+[ -d privates ] && pip install -qqq privates/*.whl
+pip install $ALL_MODULES
 
-#azdev cli-lint --ci
+azdev cli-lint --ci
