@@ -91,15 +91,15 @@ jobs:
 
   #Verify Stage
   #This stage is also going to need environment variables
-  #- script: './scripts/ci/verify_linter.sh'
-  #  displayName: "Verify PURPOSE='Lint Command Table and Help'"
+  - script: './scripts/ci/verify_linter.sh'
+    displayName: "Verify PURPOSE='Lint Command Table and Help'"
+    #workingDirectory: './'
+    env:
+      PURPOSE: "Lint Command Table and Help"
+
+  #- script: './scripts/ci/test_automation.sh'
+  #  displayName: "Verify: Purpose=Automation, Reduce_SDK=True"
   #  workingDirectory: './'
   #  env:
-  #    PURPOSE: "Lint Command Table and Help"
-
-  - script: './scripts/ci/test_automation.sh'
-    displayName: "Verify: Purpose=Automation, Reduce_SDK=True"
-    workingDirectory: './'
-    env:
-      PURPOSE: "Automation"
-      REDUCE_SDK: "True" 
+  #    PURPOSE: "Automation"
+  #    REDUCE_SDK: "True" 
