@@ -62,7 +62,6 @@ jobs:
     displayName: 'pip install wheel'
 
   #Precheck Stages
-  # Commenting out to test things 
   - script: './scripts/ci/precheck_pep8.sh'
     displayName: "Precheck PURPOSE='PEP8"
     workingDirectory: './'
@@ -71,9 +70,13 @@ jobs:
   - script: './scripts/ci/precheck_header.sh'
     displayName: "Precheck PURPOSE='Headers"
     workingDirectory: './'
+    env:
+      PURPOSE: "Headers"
   - script: './scripts/dependency/check.sh'
     displayName: "Precheck PURPOSE='Dependency Check"
     workingDirectory: './'
+    env:
+      PURPOSE: "Dependency Check"
 
   #UnitTest Stage
   #COMMENTTED OUT INTENTIONALLY RIGHT NOW BECAUSE IT BREAKS LINT STEP
