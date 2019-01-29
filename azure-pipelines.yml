@@ -95,7 +95,7 @@ jobs:
       pwd
       find src -type d -name '.tox' -exec echo {} \;
       find src -type d -name '.tox' -exec ls {} \;
-      find src -type d -name '.tox' -delete
+      find src -type d -name '.tox' -print | xargs -0 rm -rf
     displayName: "Tiago says to do this"
     
 
