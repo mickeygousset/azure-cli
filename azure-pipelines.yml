@@ -78,10 +78,6 @@ jobs:
     env:
       PURPOSE: "Dependency Check"
 
-  #Install tox
-  - script: 'pip install tox'
-    displayName: 'Install tox'
-
   #UnitTest Stage
   #COMMENTTED OUT INTENTIONALLY RIGHT NOW BECAUSE IT BREAKS LINT STEP
   #NEED TO FIX THIS
@@ -95,6 +91,10 @@ jobs:
 
   #Verify Stage
   #This stage is also going to need environment variables
+  - script: find src -type d -name '.tox' -exec rm -rf {} \;
+    displayName: "Tiago says to do this"
+    
+
   - script: './scripts/ci/verify_linter.sh'
     displayName: "Verify PURPOSE='Lint Command Table and Help'"
     workingDirectory: './'
