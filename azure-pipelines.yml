@@ -91,7 +91,10 @@ jobs:
 
   #Verify Stage
   #This stage is also going to need environment variables
-  - script: find src -type d -name '.tox' -exec rm -rf {} \;
+  - script: |
+      pwd
+      find src -type d -name '.tox' -exec echo {} \;
+      find src -type d -name '.tox' -exec ls {} \;
     displayName: "Tiago says to do this"
     
 
