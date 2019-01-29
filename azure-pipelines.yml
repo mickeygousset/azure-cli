@@ -78,6 +78,10 @@ jobs:
     env:
       PURPOSE: "Dependency Check"
 
+  #Install tox
+  - script: 'pip install tox'
+    displayName: 'Install tox'
+
   #UnitTest Stage
   #COMMENTTED OUT INTENTIONALLY RIGHT NOW BECAUSE IT BREAKS LINT STEP
   #NEED TO FIX THIS
